@@ -1,0 +1,196 @@
+﻿@model E_Esecurity.Models.Company
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User Profile</title>
+    <link href="~/Remember/assets/css/Sign.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Remember/assets//vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Remember/assets//css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-between">
+
+            <div class="logo">
+                <h1 class="text-light">E&E Security</h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="~/Remember/assets//img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/Home/Index">Home</a></li>
+                    @if (Session["CompanyId"]==null)
+                    {
+                <li> @Html.ActionLink("SignUp", "Index", "SignUp")</li>
+                    }
+                    <li> @Html.ActionLink("User Profile", "Index", "UserProfile")</li>
+                    @if (Session["CompanyId"] != null)
+                    {
+                        <li>
+                            @Html.ActionLink("Hello " + $"{Session["CompanyName"].ToString()}", "Index", "UserProfile")
+                        </li>
+                    }
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <center>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Update Profile</h3>
+                            </center>
+                            @using (Html.BeginForm("ChangeInformations", "UserProfile", FormMethod.Post))
+                            {
+                                <form action="ChangeInformations" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="CompanyId" id="CompanyId" class="form-control form-control-lg" value="@Model.CompanyId" />*@
+                                                @Html.TextBoxFor(m => m.CompanyId, new { @class = "form-control form-control-lg" , @required = "required" })
+                                                <label class="form-label" asp-for="CompanyId">Company Id</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="CompanyName" id="CompanyName" class="form-control form-control-lg" value="@Model.CompanyName" />*@
+                                                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="CompanyName">Company Name</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="ContactName" id="ContactName" class="form-control form-control-lg" value="@Model.ContactName" />*@
+                                                @Html.TextBoxFor(m => m.ContactName, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="ContactName">Contact Name</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="ContactTitle" id="ContactTitle" class="form-control form-control-lg" value="@Model.ContactTitle" />*@
+                                                @Html.TextBoxFor(m => m.ContactTitle, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="ContactTitle">Contact Title</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="Address" id="Address" class="form-control form-control-lg" value="@Model.Address" />*@
+                                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="Address">Address </label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="City" id="City" class="form-control form-control-lg" value="@Model.City" />*@
+                                                @Html.TextBoxFor(m => m.City, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="City">City</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="PostalCode" id="PostalCode" class="form-control form-control-lg" value="@Model.PostalCode" />*@
+                                                @Html.TextBoxFor(m => m.PostalCode, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="PostalCode">Postal Code</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="Country" id="Country" class="form-control form-control-lg" value="@Model.Country" />*@
+                                                @Html.TextBoxFor(m => m.Country, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="Country">Country</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                @*<input type="text" name="Region" id="Region" class="form-control form-control-lg" value="@Model.Region" />*@
+                                                @Html.TextBoxFor(m => m.Region, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="Region">Region</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                @*@Html.TextBoxFor(m => m.CompanyId, new { @class = "form-control form-control-lg" })*@
+                                                @*<input type="number" name="Phone" id="Phone" class="form-control form-control-lg" maxlength="11" value="@Model.Phone" />*@
+                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control form-control-lg" , @type = "number", @required = "required" })
+                                                <label class="form-label" asp-for="Phone">Phone Number</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                @*<input type="password" name="Password" id="Password" class="form-control form-control-lg" value="@Model.Password" />*@
+                                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control form-control-lg", @required = "required" })
+                                                <label class="form-label" asp-for="Password">Password </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="mt-4 pt-2">
+                                        <input class="btn btn-primary btn-lg" formmethod="post" type="submit" value="Submit" />
+                                    </div>
+
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

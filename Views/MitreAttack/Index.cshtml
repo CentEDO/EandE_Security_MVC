@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Attack Page</title>
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Remember/assets/css/attack.css" rel="stylesheet" />
+    <script src="~/Remember/assets/js/attack.js"></script>
+    <!-- Favicons -->
+    <link href="~/Remember/assets//img/favicon.png" rel="icon">
+    <link href="~/Remember/assets//img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Remember/assets//vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Remember/assets//css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <h2>MITRE ATTACK TEST PAGE</h2>
+    <div class="container" id="container">
+        @*<div class="form-container sign-up-container">
+                <form action="TestCreateLocalAccount" method="post">
+                    <h1>Create Account</h1>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign Up</button>
+                </form>
+            </div>*@
+        <div class="form-container sign-in-container">
+            <form action="TestCreateLocalAccount" method="post">
+                <h1>Create Account</h1>
+
+                <input type="text" placeholder="Account Name" name="accountName" />
+                <p> </p>
+                <input type="password" placeholder="Password" name="password" />
+                <p></p>
+                @*<button>TEST1</button>*@
+                <input formmethod="post" type="submit" value="GO" />
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div>
+                    <form action="TestNMap" method="post">
+                        @*<div class="overlay-panel overlay-left">
+                            
+                                <input class="ghost" formmethod="post" type="submit" value="GO" />
+                            
+                        </div>*@
+                        <div class="overlay-panel overlay-right">
+                            <h1>Network Service Discovery</h1>
+
+                            <input class="ghost" formmethod="post" type="submit" value="GO" />
+                            <h4><a href="~/Home/Index">Click for Home Page!</a></h4>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

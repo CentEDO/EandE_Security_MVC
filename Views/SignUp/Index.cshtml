@@ -1,0 +1,148 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignUp</title>
+    <link href="~/Remember/assets/css/Sign.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <center>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Sign UP</h3>
+                            </center>
+                            <form action="SignUp" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="CompanyId" class="form-control form-control-lg" />
+                                            <label class="form-label" for="CompanyId">Company Id</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="CompanyName" id="CompanyName" class="form-control form-control-lg" />
+                                            <label class="form-label" for="CompanyName">Company Name</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="ContactName" id="ContactName" class="form-control form-control-lg" />
+                                            <label class="form-label" for="ContactName">Contact Name</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="ContactTitle" id="ContactTitle" class="form-control form-control-lg" />
+                                            <label class="form-label" for="ContactTitle">Contact Title</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="Address" id="Address" class="form-control form-control-lg" />
+                                            <label class="form-label" for="Address">Address </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="City" id="City" class="form-control form-control-lg" />
+                                            <label class="form-label" for="City">City</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="PostalCode" id="PostalCode" class="form-control form-control-lg" />
+                                            <label class="form-label" for="PostalCode">Postal Code</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="Country" id="Country" class="form-control form-control-lg" />
+                                            <label class="form-label" for="Country">Country</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div class="form-outline">
+                                            <input type="text" name="Region" id="Region" class="form-control form-control-lg" />
+                                            <label class="form-label" for="Region">Region</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div class="form-outline">
+                                            <input type="number" name="Phone" id="Phone" class="form-control form-control-lg" maxlength="11" />
+                                            <label class="form-label" for="Phone">Phone Number</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+
+                                        <div class="form-outline">
+                                            <input type="Password" name="Password" id="Password" class="form-control form-control-lg" />
+                                            <label class="form-label" for="Password">Password </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="mt-4 pt-2">
+                                    <input class="btn btn-primary btn-lg" formmethod="post" type="submit" value="Submit" />
+                                </div>
+                                <div>
+                                    <p class="mb-0">
+                                        You have an account? <a href="~/LogIn/Login" class="text-black-50 fw-bold">Log in</a>
+                                    </p>
+                                </div>
+                            </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogIn</title>
+
+    <link href="~/Remember/assets/css/LogIn.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Remember/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link href="~/Remember/assets//img/favicon.png" rel="icon">
+    <link href="~/Remember/assets//img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Remember/assets//vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Remember/assets//vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Remember/assets//css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-between">
+
+            <div class="logo">
+                <h1 class="text-light">E&E Security</h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="~/Remember/assets//img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    
+                    <li> @Html.ActionLink("SignUp", "Index", "SignUp")</li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style=" border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <form action="LogIn" method="post">
+                                <div class="mb-md-5 mt-md-4 pb-5">
+
+                                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                    <p class="text-white-50 mb-5">Please enter your Company Id and Password!</p>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" name="CompanyId" id="CompanyId" class="form-control form-control-lg" />
+                                        <label class="form-label" for="typeCompanyId">CompanyId</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="password" name="Password" id="Password" class="form-control form-control-lg" />
+                                        <label class="form-label" for="typePasswordX">Password</label>
+                                    </div>
+
+                                    @*<button class="btn btn-outline-light btn-lg px-5" formmethod="post" type="submit">Login</button>*@
+                                    <input class="btn btn-outline-light btn-lg px-5" formmethod="post" type="submit" value="Login" />
+
+                                    
+
+                                </div>
+
+                                <div>
+                                    <p class="mb-0">
+                                        Don't have an account? <a href="/SignUp/Index" class="text-white-50 fw-bold">Sign Up</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
